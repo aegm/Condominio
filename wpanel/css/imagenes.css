@@ -1,0 +1,29 @@
+/* 
+    Document   : imagenes
+    Created on : 21/09/2012, 02:07:17 PM
+    Author     : angel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+
+
+body {
+	font: 13px Arial, Helvetica, Sans-serif;
+}
+.uploadifive-button {
+	float: left;
+	margin-right: 10px;
+}
+#queue {
+	border: 1px solid #E5E5E5;
+	height: 177px;
+	overflow: auto;
+	margin-bottom: 10px;
+	padding: 0 3px 3px;
+	width: 300px;
+}

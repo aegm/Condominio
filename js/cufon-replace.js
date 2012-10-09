@@ -1,0 +1,5 @@
+Cufon.replace('h1,h2,h3,h4,h5,h6',{fontFamily:'Franklin Gothic Medium'})
+Cufon.replace('.slider .banner',{fontFamily:'Franklin Gothic Medium',textShadow:'2px 2px rgba(255,255,255,.7)'})
+Cufon.replace('.block h3,.jcarousel-skin-tango_2 li h3,.jcarousel-skin-tango_3 li .lightbox-image h4',{fontFamily:'Franklin Gothic Medium',textShadow:'4px 4px rgba(255,255,255,.7)'})
+Cufon.replace('.sf-menu a,.top1',{fontFamily:'Franklin Gothic Medium',hover:true})
+Cufon.replace('.dropcap',{fontFamily:'Franklin Gothic Medium Italic'})

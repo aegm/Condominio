@@ -1,0 +1,179 @@
+/* 
+    Document   : estilo_admin
+    Created on : 10/09/2012, 11:12:31 AM
+    Author     : gonzalezan
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+h2 {
+    border-bottom: 1px solid #DDD;
+    width: 100%;
+    background: #00435D;
+    color: #fff;
+    text-align: center;
+}
+
+*{
+    margin: 0; padding: 0; border: 0; font-size: 16/24px;
+    font: 12px/22px "Segoe UI", "Segoe UI Web Regular", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, "sans-serif";
+}
+
+#contenedor{
+    width: 100%;
+}
+
+header{
+}
+
+#wrapper{
+    width: 48%;
+    margin: 0 auto;
+    border: 1px solid #DDD;
+}
+
+.topbar-wraper{
+    background:url(../../images/top_panel.jpg)no-repeat; background-size:100%;
+    width: 100%;
+    height: 110px;
+}
+
+#main {
+   width: 100%;
+}
+
+aside{
+    width: 15.8%;
+    float: left;
+    position: relative;
+   
+}
+
+nav {
+    
+}
+
+nav ul{
+    
+}
+
+nav ul li{
+    list-style: none;
+    padding: 2% 3%;
+    text-align: left;
+    border-bottom: 1px solid #aaa;
+}
+nav li:first-child a {
+    font-weight: bold;
+}
+nav li:first-child:hover {
+    cursor: default;
+}
+
+nav li:first-child {
+background: #ccc;
+}
+nav li:hover{
+     cursor: pointer;
+     background:  #ccc;
+}
+
+.login{
+    padding: 5%;
+}
+
+article{
+   
+}
+
+.article{
+    position:  relative;
+    width: 84%;
+    float: right;
+    border-left: 1px solid black;
+}
+
+.form .externo{
+	 border: none;
+    margin: 0 auto;
+	 padding:0px;
+    width: 450px;
+}
+.form .interno{
+	border-radius:6px;
+	margin:10px;
+	padding:5px;
+	border:1px solid #ddd;
+}
+.form legend{
+	font-size:14px;
+	font-weight:bold;
+	color:#FF7401;
+}
+.form p{
+	margin:2px auto;
+}
+.form label{
+	display:block;
+	float: left;
+	margin-right:15px;
+	text-align:right;
+	font-size: 12px;
+	font-weight: bold;
+	width: 125px;
+}
+.form .text, .form textarea{
+	font-family:Verdana, Geneva, sans-serif;
+	border:1px solid #666;
+	width:200px;
+	font-size:12px;
+	padding:3px;
+}
+.form select{
+	padding:3px;
+	width:212px;
+	border:1px solid #666;
+}
+.form option{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+	margin:5px;
+}
+.form .for-submit{
+	margin:10px;
+}
+.form span.for-info{
+	display:block;
+	padding-left:150px;
+	color: #999999;
+   font-size: 10px;
+   text-align: left;
+}
+.form .adicional{
+	margin:0px 0px 0px 10px;
+        height: 30px;
+        vertical-align: bottom;
+}
+
+.footer{
+    background: #00435D;
+    text-align: center;    
+}
+
+.footer a{
+    color: #FF7401;
+}
+
+.ocultar
+{
+    display: none;
+}

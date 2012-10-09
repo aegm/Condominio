@@ -1,0 +1,328 @@
+/* 
+    Document   : estilo
+    Created on : 21/08/2012, 10:11:08 AM
+    Author     : Ing. Angel Gonzalez
+    Correo     : angeledugo@gmail.com
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+*{
+    margin:0; border: 0; padding: 0;
+}
+
+
+body{
+    font-family: "Segoe UI", "Segoe UI Web Regular", "Helvetica Neue", "BBAlpha Sans", "S60 Sans", Arial, "sans-serif";
+    position: relative;
+    font-size: 16/22px;    
+}
+
+#contained{
+      background-image:  -webkit-linear-gradient(bottom, rgb(250,245,250) 23%, rgb(134,138,138) 62%);
+       background-image: -moz-linear-gradient(bottom, rgb(250,245,250) 23%, rgb(134,138,138) 62%);
+}
+a{
+    color: #2ba6cb;
+    outline: medium none;
+    line-height: inherit;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #2795b6;
+}
+
+p{
+    line-height: inherit;
+    text-align: justify
+}
+
+h1{
+    font-size: 200%;
+}
+
+h2{
+    font-size: 150%;
+}
+
+h3{
+    font-size: 120%;
+}
+
+.text-center{
+    text-align: center;
+}
+
+
+aside{
+    
+}
+
+header{
+    width: 100%;
+    height: auto;
+    position: relative;
+    box-shadow: 1px 1px 12px #ccc;  
+    -webkit-box-shadow: 1px 1px 12px #ccc;  
+    -moz-box-shadow: 1px 1px 12px #ccc;  
+    background: #ffffff url("../img/header.jpg")repeat-x;
+}
+
+header .topbar-wraper
+{
+    width: 1020px;
+    background: #ec8421;
+    height: 40px;
+    color: #fff;
+    position: relative;
+    margin-bottom: 5px;
+    margin: 0 auto;
+    box-shadow: 1px 1px 9px #005c9e;
+    -webkit-box-shadow: 1px 1px 9px #005c9e;
+    -moz-box-shadow: 1px 1px 9px rgb(0,92,158);
+}
+
+header .top-bar
+{
+    width: 1020px;
+    height: 40px;
+    line-height: 50px;
+    left: 50%;
+    position: relative;
+    margin-left: -510px;
+    
+}
+
+header .top-bar nav{
+    float: left;
+}
+
+header .top-bar ul{
+    width: 100%;
+}
+
+header .top-bar ul li{
+    display: inline;
+    list-style-type: none;  
+    height: 40px;
+}
+
+header .top-bar ul li a{
+    padding: 3px 9px;
+    text-decoration: none;
+    color: #fff;
+}
+ header .topbar-wraper nav ul{
+    height: 40px;
+    padding:0;
+}
+
+
+
+ header .topbar-wraper nav ul li{
+    display: inline-block;
+    list-style-type: none;  
+    width: 15%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+ header .topbar-wraper nav ul li a{
+    padding: 3px 9px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 80%;
+    
+}
+
+ nav ul li:hover{
+    background:#006aba;
+    border-right: 1px solid white;
+}
+
+
+
+.wrapper{
+    width: 1020px;
+    position: relative;
+    height: 120px; 
+    left:50%;
+    margin-left: -510px;
+    
+}
+
+.wrapper .logo{
+  
+    background-size:100% 100%;
+    height: 100%;
+    width: 18%;
+    text-indent: -9999px;
+}
+
+.wrapper .titulo{
+    color: #800000;
+    letter-spacing: -1px;
+    
+}
+
+ .titulo h1{
+    font-weight: bolder;
+    text-shadow: 0.1em 0.1em #ccc;
+    
+ }
+
+.wrapper .subtitulo{
+    color: #FFF;
+    letter-spacing: -1px;
+}
+
+.subtitulo h3{
+    font-weight: bolder;
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+
+header .wrapper .logo-sigcom{
+    position: relative;
+    background: url(../assets/images/banner_sigcom_3.png)no-repeat;
+    height: 100%;
+    margin-left: 30%;
+        
+}
+
+section {
+    width: 1020px;
+    height: auto;
+    position: relative;
+    margin:0 auto;
+    background: white;
+     -webkit-box-shadow: 0px 0px 5px #888;  
+     -moz-box-shadow: 0px 0px 5px #888;  
+}
+
+#empresa{
+    top: 100%;left: 28.8%;
+    
+}
+
+ .submenu{
+    position: absolute;
+    z-index: 1000; 
+    border: 1px solid #006aba;
+    background: white; 
+    display: none;    
+}
+
+.submenu nav ul li{
+    position: relative;
+    display: block;
+    list-style-type: none;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 25px 2px;
+}
+
+.well{
+    background-color: #ccc;
+}
+
+section article{
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+article h2 {
+    margin:3% 2%;
+    border-bottom: 1px solid #ddd;
+    height: 50px;
+    line-height: 50px;
+   
+}
+
+article p{
+    position: relative;
+    text-align: justify;
+    font-size: 70%;
+    margin: 3%;
+}
+
+.noticias
+{
+    width: 50%;
+}
+
+.post-noticias{
+    width: 95%;
+    margin-left: 5%;
+    height: 150px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.post-noticias .post-img{width: 120px; height: 80px;
+position: relative; float: left; margin: 1%;
+}
+
+.post .plus{float: right; margin: 1%;  font-size: 70%; }
+
+.plus a{color: #C2051B;}
+
+.twiiter {width: 40%; margin: 2%;}
+
+
+.eventos{
+    width: 50%;
+}
+
+.icon{  background: url("../img/home-icons-sprite.png") no-repeat scroll 0 0 transparent;
+    height: 45px;
+    width: 48px;
+    float: left;
+    
+}
+
+.usuario {
+    background-position: -50px 0; margin:1%;
+}
+
+.noti {
+    background-position: -300px 0; 
+}
+
+.even{background-position: -150px 0; 
+}
+footer{
+    background: #fff;
+    margin-top: 1%;
+    box-shadow: 0px -1px 3px rgb(136, 136, 136);
+    -webkit-box-shadow: 0px -1px 3px rgb(136, 136, 136);
+    -moz-box-shadow: 0px -1px 3px rgb(136, 136, 136);
+    height: 100%;
+    
+}
+
+footer p{
+    color: black;
+    width: 1020px;
+    border-top:1px solid #ddd;
+    left:50%;
+    margin-left: -510px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    text-align: center;
+    font-size: 80%;
+    text-shadow: 0.1em 0.1em #ccc;
+}
