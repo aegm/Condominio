@@ -10,8 +10,8 @@
 /****************************************** CONFIGURACION GENERAL DEL SITIO *******************************************/
 /** cambia el root del apache. **/
 define('ROOT_DIR',dirname(__FILE__).'/');
-define('ROOT_URL','http://localhost/condominio/');
-//define('ROOT_URL','http://almacenadoraadonai.com/wpruebas/');
+//define('ROOT_URL','http://localhost/condominio/');
+define('ROOT_URL','http://67.228.167.218/~condom/');
 
 /** activa los tipos de erroes del servidor **/
 //ini_set('error_report', E_ALL);
@@ -53,15 +53,15 @@ define('GOOGLE_ANALYTICS', false);
 /*********************************************** MYSQL BASE DE DATOS ***************************************************/
 
 /** El nombre de tu base de datos */
-define("DB_NAME","condominio");
+define("DB_NAME","condom_condominio");
 
 //Tu nombre de usuario de MySQL 
-//define('DB_USER', 'almacena_adonai');
-define('DB_USER', 'root');
+define('DB_USER', 'condom_condom');
+//define('DB_USER', 'root');
 
 /** Tu contraseña de MySQL*/
-//define('DB_PASS', '@lmac3n@');
-define('DB_PASS', '1234');
+define('DB_PASS', 'c0nd0m');
+//define('DB_PASS', '1234');
 
 /** Host de MySQL (es muy probable que no necesites cambiarlo)
 define('DB_HOST', 'mysql500.ixwebhosting.com'); **/

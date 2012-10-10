@@ -9,10 +9,8 @@
 	require_once("../config.php");
 	require_once("lib/funciones.php");
 	require_once("lib/clases/usr.class.php");
-        require_once("lib/clases/evento.class.php");
-        require_once("lib/clases/testimonio.class.php");
-        require_once("lib/clases/noticia.class.php");
-        require_once("lib/clases/servicio.class.php");
+        require_once("lib/clases/torre.class.php");
+        require_once 'lib/clases/rubro.class.php';
 	$user = new usuario;
 	if(!$user->session())
 	{
@@ -29,46 +27,20 @@
 	
 	switch($a)
 	{
-		case 'buscar-evento':
-                    $evento =  new evento;
-                    $evento->listar($data);
-                    echo $evento->json;
+		case 'buscar-torre':
+                    $torres = new torre;
+                    $torres->listar('', 1);
+                    echo $torres->json;
                     break;
-                 case 'eliminar-evento':
-                     $evento = new evento;
-                     $evento->eliminar($nr_evento);
-                     echo $evento->json;
+                case 'buscar-rubro':
+                    $rub = new rubro;
+                    $rub->listar($data);
+                    echo $rub->json;
                     break;
-                case 'eliminar-test':
-                     $test = new testimonio;
-                     $test->eliminar($nr_test);
-                     echo $test->json;
+                case 'eliminar-rubro':
+                    $rub = new rubro;
+                    $rub->eliminar($nr_rubro);
+                    echo $rub->json;
                     break;
-                case 'eliminar-noticia':
-                     $noti = new noticia;
-                     $noti->eliminar($nr_noticia);
-                     echo $noti->json;
-                    break;
-                case 'buscar-noticia':
-                    $noti =  new noticia;
-                    $noti->listar($data);
-                    echo $noti->json;
-                    break;
-                case 'buscar-testimonio':
-                    $test =  new testimonio;
-                    $test->listar($data);
-                    echo $test->json;
-                    break;
-                case 'buscar-servicio':
-                    $service =  new servicio;
-                    $service->listar($data);
-                    echo $service->json;
-                    break; 
-                case 'eliminar-servicio':
-                     $service = new servicio;
-                     $service->eliminar($nr_servicio);
-                     echo $service->json;
-                    break;
-                
 	}
 ?>

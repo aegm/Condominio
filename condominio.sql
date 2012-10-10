@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2012-10-09 09:03:48
+Date: 2012-10-10 15:50:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -266,7 +266,6 @@ CREATE TABLE `formularios` (
 -- ----------------------------
 -- Records of formularios
 -- ----------------------------
-INSERT INTO `formularios` VALUES ('frm_empresa', 'Datos de la Empresa', 'form_process.php', 'post', 'application/x-www-form-urlencoded', 'form', 'datbas-empresa');
 INSERT INTO `formularios` VALUES ('frm_evento', 'Agregar Evento', 'form_process.php', 'post', 'application/x-www-form-urlencoded', 'form', 'datbas-evento');
 INSERT INTO `formularios` VALUES ('frm_fevento', 'Filtro de Busqueda', 'eventos.php', 'GET', 'application/x-www-form-urlencoded', 'form', 'datbas-fevento');
 INSERT INTO `formularios` VALUES ('frm_filtro', 'Filtro de busqueda', 'servicios.php', 'GET\n', 'application/x-www-form-urlencoded', 'form', 'form-filtro');
@@ -274,9 +273,11 @@ INSERT INTO `formularios` VALUES ('frm_fnoticia', 'Filtro de busqueda', 'noticia
 INSERT INTO `formularios` VALUES ('frm_ftestimonio', 'Filtro de Busqueda', 'testimonio.php', 'GET', 'application/x-www-form-urlencoded', 'form', 'datbas-ftestimonio');
 INSERT INTO `formularios` VALUES ('frm_instalaciones', 'Agregar Instalaciòn', 'form_process.php', 'post', 'application/x-www-form-urlencoded', 'form', 'datbas-instalacion');
 INSERT INTO `formularios` VALUES ('frm_noticias', 'Datos de la Noticia', 'form_process.php', 'post', 'application/x-www-form-urlencoded', 'form', 'datbas-noticia');
+INSERT INTO `formularios` VALUES ('frm_rubro', 'Datos del Rubro', 'form_process.php', 'post', 'application/x-www-form-urlencoded', 'form', 'datbas-rubro');
 INSERT INTO `formularios` VALUES ('frm_servicio', 'Agregar Servicio', 'form_process.php', 'post', 'application/x-www-form-urlencoded', 'form', 'datbas-servicio');
 INSERT INTO `formularios` VALUES ('frm_testimonio', 'Agregar Testimonio', 'form_process.php', 'post', 'application/x-www-form-urlencoded', 'form', 'datbas-testimonio');
 INSERT INTO `formularios` VALUES ('frm_torres', 'Torres del Condominio', 'form_process.php', 'post', 'application/x-www-form-urlencoded', 'form', 'datbas-torres');
+INSERT INTO `formularios` VALUES ('frm_trubro', 'Rubro por torre', 'form_process.php', 'post', 'application/x-www-form-urlencoded', 'form', 'datbas-trubro');
 
 -- ----------------------------
 -- Table structure for `formularios_adicional`
@@ -329,12 +330,12 @@ CREATE TABLE `formularios_botones` (
 INSERT INTO `formularios_botones` VALUES ('1', 'frm_torres', 'submit', 'submit', 'Guardar', 'gg-button', '1', '1');
 INSERT INTO `formularios_botones` VALUES ('2', 'frm_empresa', 'btn_modificar', 'button', 'Modificar', 'gg-button', '0', '1');
 INSERT INTO `formularios_botones` VALUES ('3', 'frm_filtro', 'btn_agregar', 'button', 'Agregar', 'gg-button', '0', '1');
-INSERT INTO `formularios_botones` VALUES ('4', 'frm_noticias', 'submit', 'submit', 'Guardar', 'gg-button', '0', '1');
+INSERT INTO `formularios_botones` VALUES ('4', 'frm_rubro', 'submit', 'submit', 'Guardar', 'gg-button', '0', '1');
 INSERT INTO `formularios_botones` VALUES ('5', 'frm_fevento', 'btn_agregar', 'button', 'Agregar', 'gg-button', '0', '1');
 INSERT INTO `formularios_botones` VALUES ('6', 'frm_ftestimonio', 'btn_agregar', 'button', 'Agregar', 'gg-button', '0', '1');
 INSERT INTO `formularios_botones` VALUES ('7', 'frm_testimonio', 'btn_agregar', 'submit', 'Agregar', 'gg-button', '0', '1');
 INSERT INTO `formularios_botones` VALUES ('8', 'frm_evento', 'btn_agregar', 'submit', 'Guardar', 'gg-button', '0', '1');
-INSERT INTO `formularios_botones` VALUES ('9', 'frm_instalaciones', 'btn_agregar', 'submit', 'Guardar', 'gg-button', '0', '1');
+INSERT INTO `formularios_botones` VALUES ('9', 'frm_trubro', 'btn_agregar', 'submit', 'Guardar', 'gg-button', '0', '1');
 INSERT INTO `formularios_botones` VALUES ('10', 'frm_cobertura', 'btn_agregar', 'submit', 'Guardar', 'gg-button', '0', '1');
 INSERT INTO `formularios_botones` VALUES ('11', 'frm_servicio', 'btn_agregar', 'submit', 'Guardar', 'gg-button', '0', '1');
 INSERT INTO `formularios_botones` VALUES ('13', 'frm_fnoticia', 'btn_agregar', 'button', 'Agregar', 'gg-button', '0', '1');
@@ -362,13 +363,19 @@ CREATE TABLE `formularios_campos` (
   `datos_value` varchar(20) NOT NULL,
   PRIMARY KEY (`id_campo`),
   KEY `fk_formularios_campos-formulario` (`id_formulario`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of formularios_campos
 -- ----------------------------
 INSERT INTO `formularios_campos` VALUES ('1', 'frm_torres', 'text', 'Datos de la Torre', 'txt_nomb', 'txt_nomb', 'Nombre de la Torre', '', 'text vobli', '', '1', '0', '0', '1', '', '');
 INSERT INTO `formularios_campos` VALUES ('2', 'frm_torres', 'hidden', 'Datos de la Torre', 'txt_id_torre', 'txt_id_torre', 'id torre', '', 'text', '', '1', '0', '0', '2', '', '');
+INSERT INTO `formularios_campos` VALUES ('3', 'frm_rubro', 'text', 'Datos del Rubro', 'txt_rubro', 'txt_rubro', 'Descripcion del Rubro', '', 'text', '', '1', '0', '0', '1', '', '');
+INSERT INTO `formularios_campos` VALUES ('4', 'frm_trubro', 'select', 'Datos del Rubro', 'slt_rubro', 'slt_rubro', 'Rubro', '', 'text', '', '1', '0', '0', '1', 'rubro_gastos', 'id_rubro');
+INSERT INTO `formularios_campos` VALUES ('5', 'frm_trubro', 'select', 'Datos del Rubro', 'slt_torre', 'slt_torre', 'Torre', '', 'text', '', '1', '0', '0', '2', '', '');
+INSERT INTO `formularios_campos` VALUES ('6', 'frm_rubro', 'hidden', 'Datos del Rubro', 'form', 'form', '', 'guarda-rubro', 'text', '', '1', '0', '0', '2', '', '');
+INSERT INTO `formularios_campos` VALUES ('7', 'frm_trubro', 'hidden', 'Datos del Rubro', 'form', 'form', '', 'guarda-trubro', 'text', '', '1', '0', '0', '2', '', '');
+INSERT INTO `formularios_campos` VALUES ('8', 'frm_rubro', 'hidden', 'Datos del Rubro', 'rubro', 'rubro', 'rubro', '', 'text', '', '1', '0', '0', '2', '', '');
 
 -- ----------------------------
 -- Table structure for `menu`
@@ -389,7 +396,7 @@ CREATE TABLE `menu` (
   UNIQUE KEY `orden` (`orden`,`tipo`) USING BTREE,
   KEY `fk_menu_acceso` (`id_acceso`) USING BTREE,
   CONSTRAINT `menu_ibfk_1` FOREIGN KEY (`id_acceso`) REFERENCES `usuarios_accesos` (`id_acceso`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of menu
@@ -398,7 +405,8 @@ INSERT INTO `menu` VALUES ('1', '1', 'menu_torres', '', 'Torres / Edificios', 'w
 INSERT INTO `menu` VALUES ('2', '2', 'menu_pisos', '', 'Pisos', 'wpanel/piso.php', '', '2', '0', '1');
 INSERT INTO `menu` VALUES ('3', '3', 'menu_apartamento', '', 'Apartamento', 'wpanel/apartamento.php', '', '3', '0', '1');
 INSERT INTO `menu` VALUES ('4', '4', 'menu_propietario', '', 'Propietarios', 'wpanel/propietario.php', '', '4', '0', '1');
-INSERT INTO `menu` VALUES ('8', '5', 'menu_rubro', ' ', 'Rubros', 'wpanel/rubro.php', ' ', '5', '0', '1');
+INSERT INTO `menu` VALUES ('8', '5', 'menu_rubro', ' ', 'Tipos de Gastos', 'wpanel/rubro.php', '', '5', '0', '1');
+INSERT INTO `menu` VALUES ('9', '5', 'menu_rubro_torre', ' ', 'Rubros por Torre', 'wpanel/trubro.php', '', '6', '0', '1');
 
 -- ----------------------------
 -- Table structure for `personas`
@@ -928,18 +936,19 @@ CREATE TABLE `recibo_det` (
 -- ----------------------------
 DROP TABLE IF EXISTS `rubro_gastos`;
 CREATE TABLE `rubro_gastos` (
-  `id_rubro` int(3) NOT NULL,
-  `descripcion_rubro` varchar(150) NOT NULL,
+  `id_rubro` int(3) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(150) NOT NULL,
   `id_condominio` int(3) NOT NULL,
   PRIMARY KEY (`id_rubro`),
-  UNIQUE KEY `descripcion_rubro` (`descripcion_rubro`),
+  UNIQUE KEY `descripcion_rubro` (`nombre`),
   KEY `relationship22` (`id_condominio`),
   CONSTRAINT `relationship22` FOREIGN KEY (`id_condominio`) REFERENCES `condominios` (`id_condominio`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of rubro_gastos
 -- ----------------------------
+INSERT INTO `rubro_gastos` VALUES ('1', 'rubro de pruebas', '1');
 
 -- ----------------------------
 -- Table structure for `rubro_torre`
@@ -957,6 +966,8 @@ CREATE TABLE `rubro_torre` (
 -- ----------------------------
 -- Records of rubro_torre
 -- ----------------------------
+INSERT INTO `rubro_torre` VALUES ('1', '1');
+INSERT INTO `rubro_torre` VALUES ('1', '2');
 
 -- ----------------------------
 -- Table structure for `status`
@@ -1058,7 +1069,7 @@ CREATE TABLE `usuarios` (
 -- ----------------------------
 -- Records of usuarios
 -- ----------------------------
-INSERT INTO `usuarios` VALUES ('1', '1', 'jhojana', '81dc9bdb52d04dc20036dbd8313ed055', '1347424200', '1349126404', '1');
+INSERT INTO `usuarios` VALUES ('1', '1', 'jhojana', '81dc9bdb52d04dc20036dbd8313ed055', '1347424200', '1349891584', '1');
 
 -- ----------------------------
 -- Table structure for `usuarios_accesos`

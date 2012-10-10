@@ -4,7 +4,7 @@
 require_once('dbi.class.php');
 require_once('dbi.result.class.php');
  
-class servicio
+class torre
 {
 	private $db;
         public $estatus;
@@ -17,13 +17,16 @@ class servicio
 	{
 	  $this->db=new db;
 	}
-	public function listar($data)
+	public function listar($data, $condom)
 	{
-            if (isset($data))
-                $completar_sql = "where id_servicio = $data";
+            if (empty($data))
+                $completar_sql = " id_torre = $data and";
+            
+            if ($condom)
+                $completar_sql = "where $torre id_condominio = $condom";
             
             
-            $consulta=$this->db->query("SELECT * FROM servicios $completar_sql");   
+            $consulta=$this->db->query("SELECT * FROM torres $completar_sql");   
             
             if($consulta->num_rows==0)
 		{
@@ -104,8 +107,8 @@ class servicio
 //----------------------------------------------------------
 // 						PRUEBAS DE LA CLASE
 
-//$emp = new empresa;
-//$emp->datBas();
-//echo "<br><textarea>".print_r($emp->json,true)."</textarea>";
+//$torre = new torre;
+//$torre->listar('',1);
+//echo "<br><textarea>".print_r($torre->datos,true)."</textarea>";
 
 //----------------------------------------------------------

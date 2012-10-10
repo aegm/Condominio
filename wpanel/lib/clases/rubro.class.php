@@ -4,7 +4,7 @@
 require_once('dbi.class.php');
 require_once('dbi.result.class.php');
  
-class noticia
+class rubro
 {
 	private $db;
         public $estatus;
@@ -13,6 +13,7 @@ class noticia
         public $msgTitle;
         public $datos="";
 	public $json="";
+        
         public function __construct()
 	{
 	  $this->db=new db;
@@ -20,10 +21,10 @@ class noticia
 	public function listar($data)
 	{
             if (isset($data))
-                $completar_sql = "where id_noticia = $data";
+                $completar_sql = "where id_rubro = $data";
             
             
-            $consulta=$this->db->query("SELECT * FROM noticias $completar_sql");   
+            $consulta=$this->db->query("SELECT * FROM rubro_gastos $completar_sql");   
             
             if($consulta->num_rows==0)
 		{
@@ -43,33 +44,48 @@ class noticia
                 return $this->estatus;
                 
 	}
-        
-        public function agregar($txt_titulo, $txt_decrip, $txt_conten,$slt_status)
+        public function agregar($txt_rubro)
         {
-            
-            $query = "insert into noticias (titulo, descripcion,contenido,status)VALUES('$txt_titulo','$txt_decrip','$txt_conten','$slt_status')";
+            $query = "insert into rubro_gastos (nombre, id_condominio)VALUES('$txt_rubro',1)";
             $actualiza = $this->db->query($query);
             if(!$this->db->errno){
                 $this->mensaje = "Se Agregaron los Registros Correctamente";
-                $this->msgTitle = "Datos de Noticia";
+                $this->msgTitle = "Datos del rubro";
                 $this->msgTipo = "ok";
                 $this->estatus = true;
             }else{
-                 $this->mensaje = "No se Pudieron Actualizar los Registros";
+                 $this->mensaje = "No se Pudieron guardar los Registros";
                  $this->msgTipo = "error";
                  $this->estatus = false;
             }
             
             return $this->estatus;
         }
-        
-        public function actualizar($txt_titulo, $txt_decrip, $txt_conten,$slt_status, $noticia){
-             $query = "UPDATE noticias SET titulo = '$txt_titulo',descripcion = '$txt_decrip', contenido = '$txt_conten', status = '$slt_status' where id_noticia = $noticia";
+        public function adicionarTorre($slt_rubro,$slt_torre)
+        {
+            $query = "insert into rubro_torre (id_rubro, id_torre)VALUES('$slt_rubro','$slt_torre')";
+            $actualiza = $this->db->query($query);
+            if(!$this->db->errno){
+                $this->mensaje = "Se Agregaron los Registros Correctamente";
+                $this->msgTitle = "Datos del rubro";
+                $this->msgTipo = "ok";
+                $this->estatus = true;
+            }else{
+                 $this->mensaje = "No se Pudieron guardar los Registros";
+                 $this->msgTipo = "error";
+                 $this->estatus = false;
+            }
+            
+            return $this->estatus;
+        }
+        public function actualizar($txt_rubro,$rubro)
+        {
+             $query = "UPDATE rubro_gastos SET nombre = '$txt_rubro' where id_rubro = $rubro";
             
              $actualiza = $this->db->query($query);
             if(!$this->db->errno){
                 $this->mensaje = "Se Actualizaron los Registros Correctamente";
-                $this->msgTitle = "Datos de la noticia";
+                $this->msgTitle = "Datos del rubro";
                 $this->msgTipo = "ok";
                 $this->estatus = true;
             }else{
@@ -80,19 +96,19 @@ class noticia
             
             return $this->estatus;
         }
-        
-         public function eliminar($nr_noticia){
-            $query = "DELETE FROM noticias where id_noticia = '$nr_noticia'";
+        public function eliminar($nr_rubro)
+        {
+            $query = "DELETE FROM rubro_gastos where id_rubro = '$nr_rubro'";
             $elimina = $this->db->query($query);
             if(!$this->db->errno){
                 $this->mensaje = "Se Elimino el Registro Correctamente";
-                $this->msgTitle = "Datos de la Noticia";
+                $this->msgTitle = "Datos del rubro";
                 $this->msgTipo = "ok";
                 $this->estatus = true;
             }else{
                  $this->mensaje = "No se Pudo Actualizar los Registros";
                  $this->msgTipo = "error";
-                 $this->msgTitle = "Datos de la Noticia";
+                 $this->msgTitle = "Datos del rubro";
                  $this->estatus = false;
             }
               $this->json = json_encode($this);

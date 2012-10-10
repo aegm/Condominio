@@ -13,7 +13,7 @@
     
     /*************************************** OJEBTOS LOCALES ******************************************/
 
-    $reporte = new reporte;
+    $reporte = new reporte;    
     /**************************************************************************************************/	
 
     include_once('head.php');
@@ -32,14 +32,15 @@
    
     
     /********************************************* CONTENIDO *******************************************/
+    //
     //LISTANDO LAS NOTICIAS
     $array['cabezas'] = "";
     $array['registros'] = "";
     $datos['tabla'] = "";
     
     $l = 100;
-    $tabla = "rubro_gastos";
-    $c = array("nombre");
+    $tabla = "rubro_torre";
+    $c = array("id_torre");
     $p = 1;
     $id = "id_rubro";
     /*if(isset($_GET['id'])){
@@ -87,7 +88,7 @@
                                 $clase = "";
                         
                         //agregando acciones
-                         $accion = $html->html("html/accion_tabla.html",array("id"=>$registro['id_rubro'],"dir"=>"serv","ROOT_URL"=>ROOT_URL));
+                         $accion = $html->html("html/accion_tabla.html",array("id"=>$registro['id_servicio'],"dir"=>"serv","ROOT_URL"=>ROOT_URL));
                          
                         $array['registros'] .= $html->html("html/lista_tabla.html",array("tabla"=>$tabla,"id"=>$registro['id_servicio'],"i"=>$i,"campos"=>$campos,"clase"=>$clase,"accion"=>$accion));
             }
@@ -96,7 +97,7 @@
     $arreglo = array ("slt_filtro"=>array("nombre"=>"id_servicio","Nombre"));
     $array['FILTRO'] = formulario_html('frm_filtro',array("select"=>$arreglo,"tabla"=>"servicios"));
     //ADICIONANDO EL FORMULARIO PARA AGREGAR UNA NOTICIA O EDITARLA
-    $array['FORMULARIO'] = formulario_html('frm_rubro');
+    $array['FORMULARIO'] = formulario_html('frm_trubro');
     $matriz['CONTENIDO'] = $html->html("html/$archivo.html",$array);
     /***************************************** IMPRIMIENDO MATRIZ ***************************************/
     echo $html->html("html/matriz.html",$matriz);
