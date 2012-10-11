@@ -46,7 +46,7 @@ $(document).ready(function(){
                      $(".mensaje").attr("id",data.msgTipo);
                      $(".mensaje").html('<p><span class="ui-icon ui-icon-circle-close" style="float:left; margin:0 7px 20px 0;"></span></p>'+data.mensaje).dialog('open');
                  }
-                        response($.map(data.datos,function(item){
+                        ($.map(data.datos,function(item){
                         llenar_forma(item,id,valor);
 
                         }));

@@ -20,7 +20,7 @@
 
     /**************************************** VARIABLES DE MATRIZ **************************************/
 
-    $matriz['TITULO'] .= "Almacenadora Adonai.";
+    $matriz['TITULO'] .= NOMBRE;//"Almacenadora Adonai.";
     $matriz['KEYWORDS'] = "";
     $matriz['DESCRIPTION'] = "";
     $matriz['BODY'] = "inicio";

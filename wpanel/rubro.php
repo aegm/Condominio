@@ -20,7 +20,7 @@
 
     /**************************************** VARIABLES DE MATRIZ **************************************/
 
-    $matriz['TITULO'] .= "Almacenadora Adonai.";
+    $matriz['TITULO'] .= NOMBRE;//"Almacenadora Adonai.";
     $matriz['KEYWORDS'] = "";
     $matriz['DESCRIPTION'] = "";
     $matriz['BODY'] = "inicio";
@@ -59,42 +59,39 @@
     $inicial++;
 		
     $reporte->generar($tabla,$f,$o,$c,$l,$p,$id);
-    if($reporte->estatus)
-    {
+    if($reporte->estatus){
             $array['registros'] = "";
-            foreach($reporte->datos as $registro)
-            {
-                    $campos = "";
-                        $i++;
-                        foreach($registro as $campo => $valor)
-                        {
-                          
-                            $atributos = "";
-                            $formato = substr(strstr($campo, '..'), 2);
-                            $valor = formato($formato,$valor);
-                            if($i == $inicial)
-                            $array['cabezas'] .= $html->html("html/cabeza_tabla.html",array("cabeza"=>str_replace("..".extension($campo),"",$campo)));
-                        
-                            $campos .= $html->html("html/campo_tabla.html",array("campo"=>$valor,"atributos"=>$atributos));
-                           
-                        }
-                        
-                       
-                        
-                        if($i % 2 == 0)
-                                $clase = "bg_tabla";
-                        else
-                                $clase = "";
-                        
-                        //agregando acciones
-                         $accion = $html->html("html/accion_tabla.html",array("id"=>$registro['id_rubro'],"dir"=>"serv","ROOT_URL"=>ROOT_URL));
-                         
-                        $array['registros'] .= $html->html("html/lista_tabla.html",array("tabla"=>$tabla,"id"=>$registro['id_servicio'],"i"=>$i,"campos"=>$campos,"clase"=>$clase,"accion"=>$accion));
+            foreach($reporte->datos as $registro){
+                $campos = "";
+                $i++;
+                foreach($registro as $campo => $valor){
+
+                    $atributos = "";
+                    $formato = substr(strstr($campo, '..'), 2);
+                    $valor = formato($formato,$valor);
+                    if($i == $inicial)
+                    $array['cabezas'] .= $html->html("html/cabeza_tabla.html",array("cabeza"=>str_replace("..".extension($campo),"",$campo)));
+
+                    $campos .= $html->html("html/campo_tabla.html",array("campo"=>$valor,"atributos"=>$atributos));
+
+                }
+
+
+
+                if($i % 2 == 0)
+                   $clase = "bg_tabla";
+                else
+                   $clase = "";
+
+                //agregando acciones
+                $accion = $html->html("html/accion_tabla.html",array("id"=>$registro['id_rubro'],"valor"=>"''","ROOT_URL"=>ROOT_URL));
+
+                $array['registros'] .= $html->html("html/lista_tabla.html",array("tabla"=>$tabla,"id"=>$registro['id_rubro'],"i"=>$i,"campos"=>$campos,"clase"=>$clase,"accion"=>$accion));
             }
     }
     //FILTRO DE BUSSQUEDAS
-    $arreglo = array ("slt_filtro"=>array("nombre"=>"id_servicio","Nombre"));
-    $array['FILTRO'] = formulario_html('frm_filtro',array("select"=>$arreglo,"tabla"=>"servicios"));
+    //$arreglo = array ("slt_filtro"=>array("nombre"=>"id_servicio","Nombre"));
+  //  $array['FILTRO'] = formulario_html('frm_filtro',array("select"=>$arreglo,"tabla"=>"servicios"));
     //ADICIONANDO EL FORMULARIO PARA AGREGAR UNA NOTICIA O EDITARLA
     $array['FORMULARIO'] = formulario_html('frm_rubro');
     $matriz['CONTENIDO'] = $html->html("html/$archivo.html",$array);

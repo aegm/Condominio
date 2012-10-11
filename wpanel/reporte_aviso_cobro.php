@@ -1,4 +1,15 @@
 <?php
+session_start();
+/************************************** LIBRERIAS LOCALES *****************************************/
+require_once("../config.php");
+require_once 'lib/funciones.php';
+
+$sql_habit_condominio="SELECT * 
+                       FROM v_habitantes_x_torre
+                       WHERE id_condominio=1";
+
+
+
 $html = '
 <div style="text-align:center">CONJUNTO RESIDENCIAL LAS TRINITARIAS</div>
 <div style="text-align:center">RIF: J-31737501-7</div>
@@ -26,7 +37,7 @@ ALÍCUOTA: 8,8888</p>
             <td style="border:1px solid;" aling="left">DESCRIPCIÓN</td>
             <td style="border:1px solid; text-align:right">CONJUNTO</td>
             <td style="border:1px solid; text-align:right">EDIFICIO XXX</td>
-            <td style="border:1px solid; text-align:right">EDIFICIO APTO</td>        
+            <td style="border:1px solid; text-align:right">EDIFICIO APTO</td>
         </tr>
         <tr>
             <td colspan="4" style="border:1px solid; ">&nbsp;</td>            
