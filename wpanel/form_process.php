@@ -72,6 +72,17 @@ if(isset($_POST)&&count($_POST)){
                     $error_redirect_to = 'trubro.php';
                     $ty_redirect_to = 'trubro.php';
                     break;
+                case 'modifica-trubro':
+                     $rub = new rubro;
+                    $rub->actualizarRubroTorre($slt_rubro, $slt_torre,$rubro,$torre);
+                        $_SESSION['mensaje']=$rub->mensaje;
+			$_SESSION['msgTipo']=$rub->msgTipo;
+			$_SESSION['msgTitle']=$rub->msgTitle;
+
+			$error_redirect_to = 'trubro.php';
+			$ty_redirect_to = 'trubro.php';
+                    break;
+                    break;
               
                 default:
 			$_SESSION['mensaje'] = 'Formulario especificado no es válido. Póngase en contacto con nosotros si tiene alguna pregunta.';

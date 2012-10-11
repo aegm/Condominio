@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2012-10-10 15:50:17
+Date: 2012-10-11 13:19:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -363,7 +363,7 @@ CREATE TABLE `formularios_campos` (
   `datos_value` varchar(20) NOT NULL,
   PRIMARY KEY (`id_campo`),
   KEY `fk_formularios_campos-formulario` (`id_formulario`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of formularios_campos
@@ -376,6 +376,8 @@ INSERT INTO `formularios_campos` VALUES ('5', 'frm_trubro', 'select', 'Datos del
 INSERT INTO `formularios_campos` VALUES ('6', 'frm_rubro', 'hidden', 'Datos del Rubro', 'form', 'form', '', 'guarda-rubro', 'text', '', '1', '0', '0', '2', '', '');
 INSERT INTO `formularios_campos` VALUES ('7', 'frm_trubro', 'hidden', 'Datos del Rubro', 'form', 'form', '', 'guarda-trubro', 'text', '', '1', '0', '0', '2', '', '');
 INSERT INTO `formularios_campos` VALUES ('8', 'frm_rubro', 'hidden', 'Datos del Rubro', 'rubro', 'rubro', 'rubro', '', 'text', '', '1', '0', '0', '2', '', '');
+INSERT INTO `formularios_campos` VALUES ('9', 'frm_trubro', 'hidden', 'Datos del Rubro', 'rubro', 'rubro', '', '', 'text', '', '1', '0', '0', '3', '', '');
+INSERT INTO `formularios_campos` VALUES ('10', 'frm_trubro', 'hidden', 'Datos del Rubro', 'torre', 'torre', '', '', 'text', '', '1', '0', '0', '4', '', '');
 
 -- ----------------------------
 -- Table structure for `menu`
@@ -1069,7 +1071,7 @@ CREATE TABLE `usuarios` (
 -- ----------------------------
 -- Records of usuarios
 -- ----------------------------
-INSERT INTO `usuarios` VALUES ('1', '1', 'jhojana', '81dc9bdb52d04dc20036dbd8313ed055', '1347424200', '1349891584', '1');
+INSERT INTO `usuarios` VALUES ('1', '1', 'jhojana', '81dc9bdb52d04dc20036dbd8313ed055', '1347424200', '1349961524', '1');
 
 -- ----------------------------
 -- Table structure for `usuarios_accesos`

@@ -42,5 +42,17 @@
                     $rub->eliminar($nr_rubro);
                     echo $rub->json;
                     break;
+                case 'buscar-trubro':
+                    $rub = new rubro;
+                    $rub->rubroTorre($data, $torre);
+                     echo $rub->json;
+                    break;
+                case 'eliminar-trubro':
+                     $rub = new rubro;
+                    $rub->eliminarRubroTorre($nr_rubro, $nr_torre);
+                    echo $rub->json;
+                    break;
+                
+               
 	}
 ?>
